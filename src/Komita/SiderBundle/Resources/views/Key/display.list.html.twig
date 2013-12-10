@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>List key</h2>
+
+    <div class="panel panel-default">
+        {{ include(
+        'KomitaSiderBundle:Key:display.key.header.html.twig',
+        { 'key': key }
+        ) }}
+        <div class="panel-body">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <td>
+                        {% trans %}Field{% endtrans %}
+                    </td>
+                    <td>
+                        {% trans %}Value{% endtrans %}
+                    </td>
+                </tr>
+                {% for field, value in key.getValue() %}
+                    <tr>
+
+                        <td>
+                            {{ field }}
+                        </td>
+                        <td>
+                            {{ value }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>

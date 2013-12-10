@@ -1,0 +1,4 @@
+komita_sider:
+    resource: "@KomitaSiderBundle/Resources/config/routing.yml"
+    prefix:   /
+

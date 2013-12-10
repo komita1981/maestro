@@ -1,0 +1,7 @@
+parameters:
+#    komita_sider.example.class: Komita\SiderBundle\Example
+
+services:
+#    komita_sider.example:
+#        class: %komita_sider.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

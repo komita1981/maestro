@@ -1,0 +1,12 @@
+<div class="container">
+    <h2>String key</h2>
+    <div class="panel panel-default">
+        {{ include(
+        'KomitaSiderBundle:Key:display.key.header.html.twig',
+        { 'key': key }
+        ) }}
+        <div class="panel-body">
+            <textarea readonly="true" class="input-xxlarge" id="textarea" rows="3" cols="100">{{ key.getValue() }}</textarea>
+        </div>
+    </div>
+</div>

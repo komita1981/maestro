@@ -1,0 +1,36 @@
+{% extends 'KomitaSiderBundle::layout.html.twig' %}
+{% block title %}{% trans %}Redis dashboard{% endtrans %}{% endblock %}
+
+{% block body %}
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Welcome to SIDER</h1>
+            <p>{% trans %} Open source, developer friendly service for managing Redis database based on Symfony 2{% endtrans %}</p>
+
+        </div>
+    </div>
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-lg-4">
+                <h2>Manage keys</h2>
+
+                <p>Extremely easy adding, editing and viewing keys </p>
+
+            </div>
+            <div class="col-lg-4">
+                <h2>Manage configuration</h2>
+
+                <p>Coming soon</p>
+
+            </div>
+            <div class="col-lg-4">
+                <h2>Symfony 2</h2>
+
+                <p>Install as Symfony 2 bundle</p>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

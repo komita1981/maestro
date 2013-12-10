@@ -1,0 +1,54 @@
+{% extends 'KomitaSiderBundle::layout.html.twig' %}
+{% block title %}{% trans %}Redis keys{% endtrans %}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2>{% trans %}Browse keys{% endtrans %}</h2>
+        {% if (pagination.count() > 0) %}
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>
+                        <h4>
+                            #
+                        </h4>
+                    </th>
+                    <th>
+                        <h4>
+                            {% trans %}Key name{% endtrans %}
+                        </h4>
+                    </th>
+                    <th>
+                        <h4>
+                            {% trans %}Type{% endtrans %}
+                        </h4>
+                    </th>
+                    <th>
+                        <h4>
+                            {% trans %}TTL{% endtrans %}
+                        </h4>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for key in pagination %}
+                    <tr>
+                        <td>{{ pagination.getPaginationData().firstItemNumber + loop.index0 }}</td>
+                        <td>
+                            <a target="_blank"
+                               href="{{ path('komita_sider_sider_key_info', {'encoded_key_name': key.getName(), 'database': key.getDatabase()|url_encode}) }}">
+                                {{ key.getName() }}
+                            </a>
+                        </td>
+                        <td>{{ key.getDatatype() }}</td>
+                        <td>{{ key.getTtl() }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {{ knp_pagination_render(pagination) }}
+        {% else %}
+            {% trans %}No keys found{% endtrans %}
+        {% endif %}
+    </div>
+{% endblock %}

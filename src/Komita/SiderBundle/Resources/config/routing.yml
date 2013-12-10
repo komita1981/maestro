@@ -1,0 +1,15 @@
+komita_sider_sider_homepage:
+    pattern:  /sider
+    defaults: { _controller: KomitaSiderBundle:Dashboard:display }
+
+komita_sider_sider_configuration_select:
+    pattern:  /sider/configuration/select
+    defaults: { _controller: KomitaSiderBundle:Configuration:select }
+
+komita_sider_browse_keys:
+    pattern:  /sider/browse-keys/{page}
+    defaults: { _controller: KomitaSiderBundle:Key:browse, page: 1 }
+
+komita_sider_sider_key_info:
+    pattern:  /sider/display-key-info/{encoded_key_name}/{database}/{offset}/{limit}
+    defaults: { _controller: KomitaSiderBundle:Key:displayKeyInfo, offset: 0, limit: -1 }
